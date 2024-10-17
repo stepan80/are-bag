@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Bags</title>
+    <style>
+    body {
+           display: flex;
+           flex-wrap: wrap;
+           font-family: Roboto, sans-serif;
+           margin: 20px 0;
+       }
+       input[type="checkbox" i] {
+           cursor: pointer !important;
+       }
+
+        .filters {
+            position: sticky;
+            top: 0;
+            align-self: start;
+            padding: 10px;
+            width: 20%;
+              padding: 20px;
+              box-sizing: border-box;
+              margin-top: 10px;
+        }
+        .filters-cat{
+            border: 1px solid #CCCCCC;
+            border-radius: 10px;
+            padding: 0px 15px 15px;
+        }
+        .filters h2 {
+          font-family: Roboto, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+        }
+
+      .features-container h3 {
+        font-family: Roboto, sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          color: #000;
+      }
+        label {
+          font-family: Roboto, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #7E7E7E;
+        }
+        .features-container {
+            margin-top: 20px;
+            margin-left: 20px;
+            display: none; /* Nasconde inizialmente le feature */
+        }
+        .products {
+            width: 80%;
+            display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 10px;
+              padding: 20px;
+              box-sizing: border-box;
+        }
+        .product {
+    box-sizing: border-box;
+    padding: 0px;
+
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    margin: 10px;
+    }
+        .are-product {
+       padding: 10px 10px 0;
+       }
+       .product img {
+           width: 100%;
+           height: auto; /* Mantiene il rapporto d'aspetto corretto */
+    object-fit: contain; /* Evita la deformazione */
+           background-color: #f7f7f7;
+           border-top-left-radius: 10px;
+           border-top-right-radius: 10px;
+       }
+       .product-image {
+           margin: 0 30px;
+       }
+       .product  p {
+           font-size: 14px;
+           font-weight: 600;
+       }
+       .product-title {
+text-transform: uppercase;
+display: inline-block;
+line-height: 20px;
+padding-right: 10px;
+font-size: 18px;
+font-weight: 600;
+margin-top: 15px;
+margin-bottom: 10px;
+color: #000;
+}
+.product-description, .product-dimensions, .product-features, .product-materials {
+font-size: 13px;
+}
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+figcaption {
+text-align: center;
+font-weight: 800;
+margin-top: 5px;
+font-size: 13px;
+}
+.didascalia {
+text-align: center;
+font-weight: 800;
+margin-top: 5px;
+font-size: 13px;
+}
+.title{
+font-weight: 800;
+}
+
+
+
+.aquabreathe-on {
+    background-color: #009FE3;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 120px; /* Mantiene la larghezza fissa */
+    font-size: 12px;
+    margin: 10px 0px 5px 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://palmea.it/wp-content/uploads/2024/10/gocce.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Posiziona l'icona meglio */
+    background-size: 15px 15px;
+    padding: 2px 0px;
+}
+
+.aquabreathe-off {
+    background-color: #fff;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 120px; /* Mantiene la larghezza fissa */
+    font-size: 12px;
+    margin: 10px 0px 5px 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 15px 15px;
+    padding: 2px 0px;
+}
+
+
+
+
+
+
+.aquabreathe-on-light  {
+    background-color: #009FE3;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 120px; /* Mantiene la larghezza fissa */
+    font-size: 12px;
+    margin: 10px 0px 5px 0px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://palmea.it/wp-content/uploads/2024/10/gocce.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Posiziona l'icona meglio */
+    background-size: 15px 15px;
+    padding: 2px 0px;
+}
+.aquabreathe-off-light  {
+    background-color: #fff;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 120px; /* Mantiene la larghezza fissa */
+    font-size: 12px;
+    margin: 10px 0px 5px 0px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 15px 15px;
+    padding: 2px 0px;
+}
+
+
+
+
+.aquabreathe-on span, .aquabreathe-on-light span {
+    margin-left: 14px; /* Sposta il testo per non sovrapporsi con l'icona */
+}
+
+
+.category-bag {
+    background-color: #fff;
+    color: #7E7E7E;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2px 10px;
+    width: 100px;
+    font-size: 12px;
+    border: 1px solid #777777;
+    border-radius: 6px;
+    margin: 0px 0px 10px 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px 0px 5px 10px;
+}
+
+.black {
+    background-color: #333333;
+}
+
+.red {
+    background-color: #de3f4d;
+}
+
+.purple {
+    background-color: #966a85;
+}
+
+.blue {
+    background-color: #4f5670;
+}
+.white {
+    background-color: #fff;
+}
+.grey1 {
+    background-color: #b3aaa7;
+}
+
+.green{
+    background-color: #8caba5;
+}
+.green2 {
+    background-color: #26895b;
+}
+.royal {
+    background-color: #33609a;
+}
+.bordeaux {
+    background-color: #812930;
+}
+.orange {
+    background-color: #e47a38;
+}
+
+
+.colore-5 {
+    height: 15px;
+    width: 15px;
+    background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/colore-5.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: 5px 0px 3px 10px;
+}
+
+.colore-3{
+    height: 15px;
+    width: 15px;
+    background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/colore-3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: 5px 0px 3px 10px;
+}
+.colore-8 {
+    height: 15px;
+    width: 15px;
+    background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/colore-8.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: 5px 0px 3px 10px;
+}
+.colore-11 {
+    height: 15px;
+    width: 15px;
+    background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/colore-11.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: 5px 0px 3px 10px;
+}
+
+.lightbox {
+          display: none; /* Nasconde il lightbox per impostazione predefinita */
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          justify-content: center;
+          align-items: center;
+      }
+      .lightbox-content {
+        position: relative;
+          background: white;
+          padding: 20px;
+          border-radius: 5px;
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: left;
+      }
+      .lightbox-header {
+          font-weight: bold;
+          font-size: 18px;
+          margin-bottom: 10px;
+      }
+      .lightbox-info {
+          margin-bottom: 10px;
+      }
+      .close-lightbox {
+          background: #000;
+          color: white;
+          padding: 5px 10px;
+          border: none;
+          cursor: pointer;
+      }
+
+      .close {
+         position: absolute;
+          cursor: pointer;
+          font-size: 30px;
+          top: 10px;
+ right: 20px;
+      }
+      .button-spacing {
+          margin-right: 10px;
+      }
+.cat-light{
+    display: flex;
+}
+.category-light{
+   display: inline-block;
+    background-color: #fff;
+    color: #7E7E7E;
+    text-align: center;
+    padding: 2px 10px;
+    width: 95px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #777777;
+    border-radius: 6px;
+    margin: 10px 10px 10px 0px;
+}
+
+.product-details-light {
+    display: flex;
+    justify-content: space-between; /* Distribuisce le colonne */
+}
+
+.left-column, .right-column {
+    width: 48%;
+    text-align: left;
+}
+
+
+        .hidden {
+            display: none;
+        }
+
+        .features {
+            margin-top: 10px;
+
+        }
+        .feature-item {
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+            margin: 5px 0;
+            font-family: Roboto, sans-serif;
+              font-weight: 500;
+              font-size: 15px;
+              color: #7E7E7E;
+        }
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px; /* Modifica la dimensione in base alle dimensioni dell'immagine */
+            height: 16px; /* Modifica la dimensione in base alle dimensioni dell'immagine */
+            background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/Check.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .view-features {
+          background-color: #fff;
+          color: #000;
+          text-align: center;
+          width: 120px; /* Mantiene la larghezza fissa */
+          font-size: 12px;
+          margin: 10px 0px 5px 10px;
+          border-radius: 5px;
+          border: 1px solid #000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/Clipboard.svg');
+          background-repeat: no-repeat;
+          background-position: 10px center; /* Posiziona l'icona meglio */
+          background-size: 15px 15px;
+          padding: 2px 0px;
+          cursor: pointer;
+        }
+
+        .view-features span, .more-info span {
+            margin-left: 14px; /* Sposta il testo per non sovrapporsi con l'icona */
+        }
+
+.more-info {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  width: 120px; /* Mantiene la larghezza fissa */
+  font-size: 12px;
+  margin: 10px 10px 5px 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://catalogue.arenasport.com/fw2025/landing-bags/img/Info.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center; /* Posiziona l'icona meglio */
+  background-size: 15px 15px;
+  padding: 2px 0px;
+  cursor: pointer;
+}
+        /* Media Queries */
+       @media (max-width: 1024px) {
+           body {
+               flex-direction: column;
+           }
+           .filters {
+               width: 100%;
+               border-right: none;
+               border-bottom: 1px solid #ccc;
+           }
+           .products {
+               width: 100%;
+               grid-template-columns: repeat(2, 1fr); /* 2 prodotti per riga su schermi medi */
+           }
+       }
+
+       @media (max-width: 768px) {
+           .products {
+               grid-template-columns: repeat(2, 1fr); /* 2 prodotti per riga su schermi più piccoli */
+           }
+       }
+
+       @media (max-width: 480px) {
+           .products {
+               grid-template-columns: 1fr; /* 1 prodotto per riga su schermi molto piccoli */
+           }
+       }
+
+    </style>
+</head>
+<body>
+    <div class="filters">
+      <div class="filters-cat">
+        <h2>Category</h2>
+        <label>
+            <input type="checkbox" class="filter" value="ALLSET">
+            All Set
+        </label><br>
+        <label>
+            <input type="checkbox" class="filter" value="ONEGO">
+            One Go
+        </label>
+</div>
+        <div class="features-container" id="featuresContainer">
+            <h3>Features</h3>
+            <div id="featureDetails" class="features"></div>
+        </div>
+    </div>
+
+    <div class="products">
+
+      <div class="product ALLSET">
+  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010234-100-ARENA%20ALL%20SET%20BACKPACK%2045L-S-002%203.png" alt="Arena Backpack">
+  <div class="are-product">
+      <p>010234 <br>ARENA ALL SET BACKPACK 45L</p>
+  </div>
+  <div class="aquabreathe-on" ><span>aquabreathe</span></div>
+  <div class="category-bag">all set</div>
+  <div class="dot black"></div>
+  <div class="dot purple"></div>
+  <div class="dot green"></div>
+  <div class="dot blue"></div>
+  <div class="dot grey1"></div>
+  <div style="display: flex; gap: 10px;">
+      <button class="view-features"><span>View Features</span></button>
+      <div class="features hidden">
+                      <p class="feature-item">Main compartments: 2</p>
+                      <p class="feature-item">Aquabreathe</p>
+                      <p class="feature-item">External zipped pockets: 2</p>
+                      <p class="feature-item">External bottle pockets: 1</p>
+                      <p class="feature-item">XL bottle pocket</p>
+                      <p class="feature-item">Loops on straps</p>
+                      <p class="feature-item">Carabiner</p>
+                      <p class="feature-item">Breathable back panel (padded)</p>
+                      <p class="feature-item">Trolley belt</p>
+                      <p class="feature-item">Reinforced bottom</p>
+                      <p class="feature-item">Water repellent bottom</p>
+                      <p class="feature-item">Water repellent main fabric</p>
+                      <p class="feature-item">Lined antiscratch pocket</p>
+                      <p class="feature-item">Roller / Mat chord</p>
+                      <p class="feature-item">Cabin bag size</p>
+                      <p class="feature-item">Laptop sleeve</p>
+                  </div>
+      <button class="more-info" onclick="openLightbox('product1')"><span>More Info</span></button>
+  </div>
+</div>
+
+<div class="product ALLSET">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010235-901-ARENA%20ALL%20SET%20BACKPACK%2045L%20AO-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010235<br> ARENA ALL SET BACKPACK 45L AO</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">all set</div>
+<div class="colore-5"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+                <p class="feature-item">Main compartments: 2</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 2</p>
+                <p class="feature-item">External bottle pockets: 1</p>
+                <p class="feature-item">XL bottle pocket</p>
+                <p class="feature-item">Loops on straps</p>
+                <p class="feature-item">Carabiner</p>
+                <p class="feature-item">Breathable back panel (padded)</p>
+                <p class="feature-item">Trolley belt</p>
+                <p class="feature-item">Reinforced bottom</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Lined antiscratch pocket</p>
+                <p class="feature-item">Roller / Mat chord</p>
+                <p class="feature-item">Cabin bag size</p>
+                <p class="feature-item">Laptop sleeve</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product2')"><span>More Info</span></button>
+</div>
+</div>
+
+
+<div class="product ALLSET">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010233-100-ARENA%20ALL%20SET%20URBAN%20BACKPACK-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010233 <br>ARENA ALL SET URBAN BACKPACK</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">all set</div>
+<div class="dot black"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+                <p class="feature-item">Main compartments: 2</p>
+                <p class="feature-item">External zipped pockets: 3</p>
+                <p class="feature-item">External bottle pockets: 1</p>
+                <p class="feature-item">XL bottle pocket</p>
+                <p class="feature-item">Trolley belt</p>
+                <p class="feature-item">Reinforced bottom</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Lined antiscratch pocket</p>
+                <p class="feature-item">Cabin bag size</p>
+                <p class="feature-item">Laptop sleeve (padded)</p>
+                <p class="feature-item">Organizer (for iPad, chargers, etc.)</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product3')"><span>More Info</span></button>
+</div>
+</div>
+
+<div class="product ALLSET">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010227-100-ARENA%20ALL%20SET%20BACKPACK%2030L-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010227 <br> ARENA ALL SET BACKPACK 30L</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">all set</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div class="dot grey1"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+                <p class="feature-item">Main compartments: 2</p>
+                <p class="feature-item">External zipped pockets: 1</p>
+                <p class="feature-item">External bottle pockets: 2</p>
+                <p class="feature-item">XL bottle pocket</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product4')"><span>More Info</span></button>
+</div>
+</div>
+
+<div class="product ALLSET">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-100-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010237 <br>ARENA ALL SET DUFFLE 40L</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">all set</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div class="dot blue"></div>
+<div class="dot royal"></div>
+<div class="dot red"></div>
+<div class="dot grey1"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+                <p class="feature-item">Main compartments: 2</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 1</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Shoe compartment</p>
+                <p class="feature-item">Duffle handle</p>
+                <p class="feature-item">Cabin bag size</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product5')"><span>More Info</span></button>
+</div>
+</div>
+
+<div class="product ALLSET">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-100-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010236 <br>ARENA ALL SET DUFFLE 25L</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">all set</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div class="dot blue"></div>
+<div class="dot royal"></div>
+<div class="dot red"></div>
+<div class="dot grey1"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+                <p class="feature-item">Main compartments: 2</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 1</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Shoe compartment</p>
+                <p class="feature-item">Duffle handle</p>
+                <p class="feature-item">Cabin bag size</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product6')"><span>More Info</span></button>
+</div>
+</div>
+
+<div class="product ALLSET">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010241-100-%20ARENA%20ALL%20SET%20MESH%20BAG-S-001.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010241 <br> ARENA ALL SET MESH BAG</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">all set</div>
+<div class="dot black"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Water repellent materials</p>
+                <p class="feature-item">Foldable construction</p>
+                <p class="feature-item">Buckle closure</p>
+                <p class="feature-item">Handle for easy gradb and hanging</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product7')"><span>More Info</span></button>
+</div>
+</div>
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-100-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010231 <br> ARENA ONE GO BACKPACK 45L</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div class="dot green2"></div>
+<div class="dot blue"></div>
+<div class="dot royal"></div>
+<div class="dot red"></div>
+<div class="dot bordeaux"></div>
+<div class="dot grey1"></div>
+<div class="dot orange"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Main compartmentes: 1</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 4</p>
+                <p class="feature-item">External bottle pockets: 2</p>
+                <p class="feature-item">XL bottle pocket</p>
+                <p class="feature-item">Loops on straps</p>
+                <p class="feature-item">Carabiner</p>
+                <p class="feature-item">Breathable back panel</p>
+                <p class="feature-item">Trolley belt</p>
+                <p class="feature-item">Reinforced bottom</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+                <p class="feature-item">Laptop sleeve</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product8')"><span>More Info</span></button>
+</div>
+</div>
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010232-901-ARENA%20ONE%20GO%20BACKPACK%2045L%20AO-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010232 <br> ARENA ONE GO BACKPACK 45L AO</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="colore-11"></div>
+<div class="colore-5"></div>
+<div class="colore-3"></div>
+<div class="colore-8"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Main compartmentes: 1</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 4</p>
+                <p class="feature-item">External bottle pockets: 2</p>
+                <p class="feature-item">XL bottle pocket</p>
+                <p class="feature-item">Loops on straps</p>
+                <p class="feature-item">Carabiner</p>
+                <p class="feature-item">Breathable back panel</p>
+                <p class="feature-item">Trolley belt</p>
+                <p class="feature-item">Reinforced bottom</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+                <p class="feature-item">Laptop sleeve</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product9')"><span>More Info</span></button>
+</div>
+</div>
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-100-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010229 <br> ARENA ONE GO BACKPACK 35L</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div class="dot blue"></div>
+<div class="dot royal"></div>
+<div class="dot red"></div>
+<div class="dot bordeaux"></div>
+<div class="dot grey1"></div>
+
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Main compartmentes: 1</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 3</p>
+                <p class="feature-item">External bottle pockets: 2</p>
+                <p class="feature-item">Loops on straps</p>
+                <p class="feature-item">Carabiner</p>
+                <p class="feature-item">Breathable back panel</p>
+                <p class="feature-item">Trolley belt</p>
+                <p class="feature-item">Reinforced bottom</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+                <p class="feature-item">Laptop sleeve</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product10')"><span>More Info</span></button>
+</div>
+</div>
+
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010230-901-ARENA%20ONE%20GO%20BACKPACK%2035L%20AO-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010230 <br>ARENA ONE GO BACKPACK 35L AO</p>
+</div>
+<div class="aquabreathe-on" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="colore-11"></div>
+
+<div class="colore-3"></div>
+
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Main compartmentes: 1</p>
+                <p class="feature-item">Aquabreathe</p>
+                <p class="feature-item">External zipped pockets: 4</p>
+                <p class="feature-item">External bottle pockets: 2</p>
+                <p class="feature-item">XL bottle pocket</p>
+                <p class="feature-item">Loops on straps</p>
+                <p class="feature-item">Carabiner</p>
+                <p class="feature-item">Breathable back panel</p>
+                <p class="feature-item">Trolley belt</p>
+                <p class="feature-item">Reinforced bottom</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+                <p class="feature-item">Laptop sleeve</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product11')"><span>More Info</span></button>
+</div>
+</div>
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010226-100-ARENA%20ONE%20GO%20BACKPACK%2030L-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010226 <br> ARENA ONE GO BACKPACK 30L</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot blue"></div>
+<div class="dot royal"></div>
+<div class="dot red"></div>
+
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Main compartmentes: 1</p>
+                <p class="feature-item">External zipped pockets: 2</p>
+                <p class="feature-item">External bottle pockets: 1</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product12')"><span>More Info</span></button>
+</div>
+</div>
+
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010228-901-ARENA%20ONE%20GO%20BACKPACK%2030L%20AO-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010228 <br> ARENA ONE GO BACKPACK 30L AO</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="colore-11"></div>
+<div class="colore-3"></div>
+
+
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Main compartmentes: 1</p>
+                <p class="feature-item">External zipped pockets: 2</p>
+                <p class="feature-item">External bottle pockets: 1</p>
+                <p class="feature-item">Water repellent bottom</p>
+                <p class="feature-item">Water repellent main fabric</p>
+                <p class="feature-item">Cabin bag size</p>
+            </div>
+<button class="more-info" onclick="openLightbox('product13')"><span>More Info</span></button>
+</div>
+</div>
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010242-100-ARENA%20ONE%20GO%20POCKET%20BAG-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010242 <br>ARENA ONE GO POCKET BAG</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="dot black"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Wet management system</p>
+                <p class="feature-item">Handle for easy grab and hanging</p>
+
+            </div>
+<button class="more-info" onclick="openLightbox('product14')"><span>More Info</span></button>
+</div>
+</div>
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-100-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010240 <br> ARENA ONE GO MESH BAG</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div class="dot blue"></div>
+<div class="dot royal"></div>
+<div class="dot red"></div>
+<div class="dot crimson"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Buckle closure</p>
+                <p class="feature-item">Handle for easy grab and hanging</p>
+
+            </div>
+<button class="more-info" onclick="openLightbox('product15')"><span>More Info</span></button>
+</div>
+</div>
+
+
+<div class="product ONEGO">
+<img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010239-100-ARENA%20ONE%20GO%20SWIMBAG-S-002.png" alt="Arena Backpack">
+<div class="are-product">
+<p>010239 <br> ARENA ONE GO SWIMBAG</p>
+</div>
+<div class="aquabreathe-off" ><span>aquabreathe</span></div>
+<div class="category-bag">one go</div>
+<div class="dot black"></div>
+<div class="dot purple"></div>
+<div class="dot green"></div>
+<div style="display: flex; gap: 10px;">
+<button class="view-features"><span>View Features</span></button>
+<div class="features hidden">
+
+                <p class="feature-item">Drawstring fastening</p>
+                <p class="feature-item">Water repellent materials</p>
+
+            </div>
+<button class="more-info" onclick="openLightbox('product16')"><span>More Info</span></button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+    <!-- Lightbox per il Prodotto 1 -->
+    <div class="lightbox" id="product1">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product1')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010234-100-ARENA%20ALL%20SET%20BACKPACK%2045L-S-002%203.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010229<br>
+                ARENA ONE GO BACKPACK 35</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+    </div>
+                    <p class="product-description">Crafted from a robust tech fabric; multiple pockets
+and compartments provide space optimization to
+easily store and access plenty of gear; the engineered
+ventilation (breathable inserts are stretegically combined
+with watertight materials) effectively prevents odor, mold
+and moisture build-up. Ideal for multisport lovers.</p>
+    <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H55 X L38 X W28 (45L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+                Nylon 90%<br>
+                Polyester 10%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Smart Space</b> management<br>
+                <b>Wet management</b> system<br>
+                <b>Ultra</b> padded / breathable back panel<br>
+                <b>Water repellent</b> materials<br>
+                <b>Laptop</b> sleeve<br>
+                <b>Trolley</b> belt<br>
+                <b>Roller</b> / mat holder
+            </p>
+        </div>
+    </div>
+                </div>
+            </div>
+            <!-- Griglia di immagini più piccole -->
+            <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+            <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010234-200-ARENA%20ALL%20SET%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>200 plum</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010234-300-ARENA%20ALL%20SET%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>300 sage</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010234-400-ARENA%20ALL%20SET%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>400 navy</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010234-800-ARENA%20ALL%20SET%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>800 ice</figcaption>
+              </figure>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Lightbox per il Prodotto 2 -->
+    <div class="lightbox" id="product2">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product2')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010235-901-ARENA%20ALL%20SET%20BACKPACK%2045L%20AO-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">901 scratched</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010235 <br>ARENA ALL SET BACKPACK 45L AO</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+    </div>
+                    <p class="product-description">Crafted from a robust tech fabric; multiple pockets
+    and compartments provide space optimization to
+    easily store and access plenty of gear; the engineered
+    ventilation (breathable inserts are stretegically combined
+    with watertight materials) effectively prevents odor, mold
+    and moisture build-up. Ideal for multisport lovers.</p>
+    <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H55 X L38 X W28 (45L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+
+                Polyester 100%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Smart Space</b> management<br>
+                <b>Wet management</b> system<br>
+                <b>Ultra</b> padded / breathable back panel<br>
+                <b>Water repellent</b> materials<br>
+                <b>Laptop</b> sleeve<br>
+                <b>Trolley</b> belt<br>
+                <b>Roller</b> / mat holder
+            </p>
+        </div>
+    </div>
+                </div>
+            </div>
+            <!-- Griglia di immagini più piccole -->
+            <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+            <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010235-902-ARENA%20ALL%20SET%20BACKPACK%2045L%20AO-S-002.png" alt="902 laquer" style="width: 25%; height: auto;">
+                  <figcaption>902 laquer</figcaption>
+              </figure>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Lightbox per il Prodotto 3 -->
+    <div class="lightbox" id="product3">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product3')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010233-100-ARENA%20ALL%20SET%20URBAN%20BACKPACK-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010233 <br> ARENA ALL SET URBAN BACKPACK</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+    </div>
+                    <p class="product-description">Compact, comfortable, easy to carry along; the main
+large compartment, the separated, padded laptop
+sleeve and the number of side/top pockets are
+designed for you to pack all your daily equipment in
+this unique 30l backpack.</p>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H48 X L30 X W20 (30L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+Nylon 90%<br>
+                Polyester 10%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Smart Space</b> management<br>
+                <b>Water repellent</b> materials<br>
+                <b>Laptop</b> sleeve<br>
+                <b>Trolley</b> belt<br>
+                <b>Organizer</b> (for I-Pad, chargers, ecc)
+            </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+
+              </div>
+          </div>
+      </div>
+
+    <!-- Lightbox per il Prodotto 4 -->
+    <div class="lightbox" id="product4">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product4')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010227-100-ARENA%20ALL%20SET%20BACKPACK%2030L-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010227 <br> ARENA ALL SET BACKPACK 30L</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+    </div>
+                    <p class="product-description">Practical backpack designed to carry plenty of
+stuff around: the two main roomy compartments
+are completed by an extra front zipped pouch and
+mesh side pockets to wisely arrange all pieces of
+equipment.</p>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H45 X L31 X W20 (30L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+                Nylon 90%<br>
+                Polyester 10%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Smart Space</b> management<br>
+                <b>Water repellent</b> materials<br>
+            </p>
+        </div>
+    </div>
+                </div>
+            </div>
+            <!-- Griglia di immagini più piccole -->
+            <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+            <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010227-200-ARENA%20ALL%20SET%20BACKPACK%2030L-S-002.png" style="width: 80%; height: auto;">
+                  <figcaption>200 plum</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010227-300-ARENA%20ALL%20SET%20BACKPACK%2030L-S-002.png" style="width: 80%; height: auto;">
+                  <figcaption>300 sage</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010227-800-ARENA%20ALL%20SET%20BACKPACK%2030L-S-002.png" style="width: 80%; height: auto;">
+                  <figcaption>800 ice</figcaption>
+              </figure>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Lightbox per il Prodotto 5 -->
+    <div class="lightbox" id="product5">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product5')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-100-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010237<br>
+ARENA ALL SET DUFFLE 40L</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+    </div>
+                    <p class="product-description">Built on a water repellent bottom, the variety of
+pockets and compartment helps making the most
+of its 40L capacity; the enhanced air circulation
+system lets moisture out for an unparalleled wet
+management.<br>
+Padded shoulder straps for easy wear and grab.</p>
+    <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H28 X L50 X W28 (40L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+                Nylon 90%<br>
+                Polyester 10%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Smart Space</b> management<br>
+                <b>Water repellent</b> materials<br>
+                <b>Shoes</b> compartment
+            </p>
+        </div>
+    </div>
+                </div>
+            </div>
+            <!-- Griglia di immagini più piccole -->
+            <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+            <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-200-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>200 plum</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-300-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>300 sage</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-400-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>400 navy</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-500-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>500 royal</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-600-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>600 red</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010237-800-ARENA%20ALL%20SET%20DUFFLE%2040L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>800 ice</figcaption>
+              </figure>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Lightbox per il Prodotto 6 -->
+    <div class="lightbox" id="product6">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product6')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-100-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010236 <br> ARENA ALL SET DUFFLE 25L</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+    </div>
+                    <p class="product-description">Built on a water repellent bottom, the variety of
+    pockets and compartment helps making the most
+    of its 40L capacity; the enhanced air circulation
+    system lets moisture out for an unparalleled wet
+    management.<br>
+    Padded shoulder straps for easy wear and grab.</p>
+    <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H25 X L40 X W25 (25L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+                Nylon 90%<br>
+                Polyester 10%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Smart Space</b> management<br>
+                <b>Water repellent</b> materials<br>
+                <b>Shoes</b> compartment
+            </p>
+        </div>
+    </div>
+                </div>
+            </div>
+            <!-- Griglia di immagini più piccole -->
+            <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+            <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-200-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>200 plum</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-300-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>300 sage</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-400-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>400 navy</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-500-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>500 royal</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-600-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>600 red</figcaption>
+              </figure>
+              <figure style="width: 100%; text-align: center;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010236-800-ARENA%20ALL%20SET%20DUFFLE%2025L-S-002.png" style="width: 100%; height: auto;">
+                  <figcaption>800 ice</figcaption>
+              </figure>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Lightbox per il Prodotto 7 -->
+    <div class="lightbox" id="product7">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox('product7')">&times;</span>
+            <div class="lightbox-body" style="display: flex;">
+              <div class="product-image" style="width: 50%;">
+                <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010241-100-%20ARENA%20ALL%20SET%20MESH%20BAG-S-001.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                  <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+              </div>
+                <div class="product-info" style="width: 50%;">
+                    <div class="product-header">
+                        <h2 class="product-title">010241<br>ARENA ALL SET MESH BAG</h2>
+                    </div>
+                    <div class="cat-light">
+                    <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+    </div>
+                    <p class="product-description">A packable, heavy duty bag to carry your swimming
+gear all the way to the pool deck; the quick-drying,
+netted construction lets water flow out while the front
+pockets create space to keep small belongings dry.</p>
+    <div class="product-details-light">
+        <div class="left-column">
+            <p class="product-dimensions">
+                <span class="title">DIMENSIONS</span><br>
+                H65 X L50 X W1 (40L)
+            </p>
+            <p class="product-materials">
+                <span class="title">MATERIALS</span><br>
+Nylon 90%<br>
+                Polyester 100%
+            </p>
+        </div>
+        <div class="right-column">
+            <p class="product-features">
+                <span class="title">FEATURES</span><br>
+                <b>Water repellent</b> materials<br>
+                <b>Foldable</b> construction<br>
+                <b>Buckle</b> closure<br>
+                <b>Handle </b>for easy grab and hanging
+            </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Lightbox per il Prodotto 8 -->
+      <div class="lightbox" id="product8">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product8')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-100-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010231<br>
+ARENA ONE GO BACKPACK 45L</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+      </div>
+                      <p class="product-description">Top loading design to easily dispose of its large
+capacity (45L) and plenty of pockets/features to
+comfortably move around the pooldeck;
+breathable and watertight inserts are engineered so
+as to keep soaked and dry stuff apart.</p>
+      <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+                  H50 X L40 X W25 (45L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+                  Nylon 90%<br>
+                  Polyester 10%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+  <b>Brethable</b> back panel<br>
+  <b>Water repellent</b> materials<br>
+  <b>Laptop</b> sleeve<br>
+  <b>Trolley</b> belt
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-200-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>200 plum</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-300-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>300 sage</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-330-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>330 green</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-400-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>400 navy</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-500-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>500 royal</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-600-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>600 red</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-700-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>700 crimson</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-800-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>800 ice</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010231-900-ARENA%20ONE%20GO%20BACKPACK%2045L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>900 orange</figcaption>
+                </figure>
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Lightbox per il Prodotto 9 -->
+      <div class="lightbox" id="product9">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product9')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010232-901-ARENA%20ONE%20GO%20BACKPACK%2045L%20AO-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">901 scratched</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010232<br>
+ARENA ONE GO BACKPACK 45L AO</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+      </div>
+                      <p class="product-description">Top loading design to easily dispose of its large
+capacity (45L) and plenty of pockets/features to
+comfortably move around the pooldeck; breathable
+and watertight inserts are engineered so as to keep
+soaked and dry stuff apart.<br>
+Featuring colourful and original prints to stand out
+and be unique.</p>
+      <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+                H50 X L40 X W25 (45L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+
+                  Polyester 100%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+  <b>Brethable</b> back panel<br>
+  <b>Water repellent</b> materials<br>
+  <b>Laptop</b> sleeve<br>
+  <b>Trolley</b> belt
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010232-902-ARENA%20ONE%20GO%20BACKPACK%2045L%20AO-S-002.png" style="width: 80%; height: auto;">
+                    <figcaption>902 lacquer</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010232-910-ARENA%20ONE%20GO%20BACKPACK%2045L%20AO-S-002.png" style="width: 80%; height: auto;">
+                    <figcaption>910 fun skulls</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010232-911-ARENA%20ONE%20GO%20BACKPACK%2045L%20AO-S-002.png" style="width: 80%; height: auto;">
+                    <figcaption>911 rain forest</figcaption>
+                </figure>
+
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Lightbox per il Prodotto 10 -->
+      <div class="lightbox" id="product10">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product10')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-100-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010229<br>
+ARENA ONE GO BACKPACK 35L</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+      </div>
+                      <p class="product-description">Compact and top loading design to maximise space
+and easily stuff your essentials;
+the enhanced ventilation system keeps moisture
+under control and the breathable back panel ensures
+no-sweat transport.</p>
+      <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+                H46 X L38 X W23 (35L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+Nylon 90%<br>
+                  Polyester 10%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+  <b>Brethable</b> back panel<br>
+  <b>Water repellent</b> materials<br>
+  <b>Laptop</b> sleeve<br>
+  <b>Trolley</b> belt
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-200-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>200 plum</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-300-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>30 sage</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-400-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>400 navy</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-500-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>500 royal</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-600-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>600 red</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-700-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>700 crimson</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010229-800-ARENA%20ONE%20GO%20BACKPACK%2035L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>800 ice</figcaption>
+                </figure>
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Lightbox per il Prodotto 11 -->
+      <div class="lightbox" id="product11">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product11')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010230-901-ARENA%20ONE%20GO%20BACKPACK%2035L%20AO-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">901 scratched</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010230 <br> ARENA ONE GO BACKPACK 35L AO</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+      </div>
+                      <p class="product-description">Compact and top loading design to maximise space
+and easily stuff your essentials; the enhanced
+ventilation system keeps moisture under control
+and the breathable back panel provides no-sweat
+transport.<br>
+Featuring colourful and original prints to stand out
+and be unique.</p>
+      <div class="aquabreathe-on-light"><span>aquabreathe</span></div>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+                H46 X L38 X W23 (35L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+
+                  Polyester 100%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+  <b>Brethable</b> back panel<br>
+  <b>Water repellent</b> materials<br>
+  <b>Laptop</b> sleeve<br>
+  <b>Trolley</b> belt
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010230-902-ARENA%20ONE%20GO%20BACKPACK%2035L%20AO-S-002.png" style="width: 25%; height: auto;">
+                    <figcaption>902 fun skulls</figcaption>
+                </figure>
+
+              </div>
+          </div>
+      </div>
+
+
+      <!-- Lightbox per il Prodotto 12 -->
+      <div class="lightbox" id="product12">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product12')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010226-100-ARENA%20ONE%20GO%20BACKPACK%2030L-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010226<br>
+ARENA ONE GO BACKPACK 30L</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+      </div>
+                      <p class="product-description">Practical and versatile, this 30L backpack features a
+main, roomy compartment to easily pack and access
+your belongings and two front pockets, meant to
+store wet and dry stuff apart.</p>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+              H45 X L31 X W18 (30L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+Nylon 90%<br>
+                  Polyester 10%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+
+  <b>Water repellent</b> materials
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010226-200-ARENA%20ONE%20GO%20BACKPACK%2030L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>200 plum</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010226-400-ARENA%20ONE%20GO%20BACKPACK%2030L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>400 navy</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010226-500-ARENA%20ONE%20GO%20BACKPACK%2030L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>500 royal</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010226-600-ARENA%20ONE%20GO%20BACKPACK%2030L-S-002.png" style="width: 100%; height: auto;">
+                    <figcaption>600 red</figcaption>
+                </figure>
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Lightbox per il Prodotto 13 -->
+      <div class="lightbox" id="product13">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product13')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010228-901-ARENA%20ONE%20GO%20BACKPACK%2030L%20AO-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">901 scratched</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010228<br>
+ARENA ONE GO BACKPACK 30L AO</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div>
+      </div>
+                      <p class="product-description">Practical and versatile, this 30L backpack features a
+main, roomy compartment to easily pack and access
+your belongings and two front pockets, meant to
+store wet and dry stuff apart.</p>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+              H45 X L31 X W18 (30L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+
+                  Polyester 100%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+
+  <b>Water repellent</b> materials
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010228-902-ARENA%20ONE%20GO%20BACKPACK%2030L%20AO-S-002.png" style="width: 25%; height: auto;">
+                    <figcaption>902 fun skulls</figcaption>
+                </figure>
+
+
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Lightbox per il Prodotto 14 -->
+      <div class="lightbox" id="product14">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product14')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010242-100-ARENA%20ONE%20GO%20POCKET%20BAG-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010242 <br>ARENA ONE GO POCKET BAG</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+      </div>
+                      <p class="product-description">The perfect add-on to carry extra stuff by hand;
+its 7L capacity and the engineered ventilation make
+it suitable for storing all sort of equipment, either
+wet or dry.</p>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+              H34 X L18 X W12 (7L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+Nylon 90%<br>
+                  Polyester 10%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Wet management</b> system<br>
+
+    <b>Handle</b> for easy grab and hanging
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+
+
+
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Lightbox per il Prodotto 15 -->
+      <div class="lightbox" id="product15">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product15')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-100-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010240<br>
+ARENA ONE GO MESH BAG</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+      </div>
+                      <p class="product-description">A practical sack to pack and transport all your
+pieces of equipment; the buckle closure keeps your
+stuff together while water flows out thanks to the
+netted construction.</p>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+              H65 X L55 X W1 (40L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+
+                  Polyester 100%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Buckle</b> closure<br>
+
+  <b>Handle</b> for easy grab and hanging
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-200-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" style="width: 100%; height: auto;">
+                    <figcaption>200 plum</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-300-ARENA%20ONE%20GO%20MESH%20BAG-S-001eee.png" style="width: 100%; height: auto;">
+                    <figcaption>300 sage</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-400-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" style="width: 100%; height: auto;">
+                    <figcaption>400 navy</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-500-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" style="width: 100%; height: auto;">
+                    <figcaption>500 royal</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-600-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" style="width: 100%; height: auto;">
+                    <figcaption>600 red</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010240-700-ARENA%20ONE%20GO%20MESH%20BAG-S-001.png" style="width: 100%; height: auto;">
+                    <figcaption>700 crimson</figcaption>
+                </figure>
+
+
+              </div>
+          </div>
+      </div>
+
+
+      <!-- Lightbox per il Prodotto 16 -->
+      <div class="lightbox" id="product16">
+          <div class="lightbox-content">
+              <span class="close" onclick="closeLightbox('product16')">&times;</span>
+              <div class="lightbox-body" style="display: flex;">
+                <div class="product-image" style="width: 50%;">
+                  <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010239-100-ARENA%20ONE%20GO%20SWIMBAG-S-002.png" alt="Arena All Set Backpack" style="width: 80%; height: auto; margin: auto; display: block;">
+                    <p class="didascalia" style="text-align: center; color: black; margin-top: 5px;">100 black</p>
+                </div>
+                  <div class="product-info" style="width: 50%;">
+                      <div class="product-header">
+                          <h2 class="product-title">010239<br>
+ARENA ONE GO SWIMBAG</h2>
+                      </div>
+                      <div class="cat-light">
+                      <div class="category-light">Swim</div> <div class="category-light">Daypack/Travel</div> <div class="category-light">Multisport</div>
+      </div>
+                      <p class="product-description">No-fuss sack featuring dual drawstring closure and
+water repellent fabric to protect contents from wet
+floor.<br>
+Whatever you need to bring poolside , stash it in.</p>
+      <div class="product-details-light">
+          <div class="left-column">
+              <p class="product-dimensions">
+                  <span class="title">DIMENSIONS</span><br>
+              H46 X L34 X W1 (10L)
+              </p>
+              <p class="product-materials">
+                  <span class="title">MATERIALS</span><br>
+Nylon 90%<br>
+                  Polyester 10%
+              </p>
+          </div>
+          <div class="right-column">
+              <p class="product-features">
+                  <span class="title">FEATURES</span><br>
+                  <b>Drawstring</b> fastening<br>
+
+  <b>Water repellent</b> materials
+              </p>
+          </div>
+      </div>
+                  </div>
+              </div>
+              <!-- Griglia di immagini più piccole -->
+              <h2 style="text-align: center;     font-size: 1em;">VARIANT COLORS</h2>
+              <div class="small-image-grid" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010239-200-ARENA%20ONE%20GO%20SWIMBAG-S-002.png" style="width: 50%; height: auto;">
+                    <figcaption>200 plum</figcaption>
+                </figure>
+                <figure style="width: 100%; text-align: center;">
+                    <img src="https://catalogue.arenasport.com/fw2025/landing-bags/img/010239-300-ARENA%20ONE%20GO%20SWIMBAG-S-002.png" style="width: 50%; height: auto;">
+                    <figcaption>300 sage</figcaption>
+                </figure>
+              </div>
+          </div>
+      </div>
+
+    <script>
+
+    function openLightbox(productId) {
+          document.getElementById(productId).style.display = 'flex';
+      }
+
+      function closeLightbox(productId) {
+          document.getElementById(productId).style.display = 'none';
+      }
+
+
+
+
+        const filters = document.querySelectorAll('.filter');
+        const products = document.querySelectorAll('.product');
+        const viewFeaturesButtons = document.querySelectorAll('.view-features');
+        const featuresContainer = document.getElementById('featuresContainer');
+        const featureDetails = document.getElementById('featureDetails');
+
+        viewFeaturesButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const featuresDiv = button.nextElementSibling; // Ottieni il div delle caratteristiche
+                const featureItems = featuresDiv.querySelectorAll('.feature-item'); // Ottieni tutti gli elementi delle caratteristiche
+
+                // Controlla se le features sono già visibili
+                const isVisible = featuresContainer.style.display === 'block';
+
+                // Pulisci le caratteristiche precedenti
+                featureDetails.innerHTML = '';
+
+                if (isVisible) {
+                    // Se sono visibili, nascondile
+                    featuresContainer.style.display = 'none';
+                } else {
+                    // Aggiungi le caratteristiche al contenitore
+                    featureItems.forEach(item => {
+                        featureDetails.appendChild(item.cloneNode(true)); // Clona l'elemento e aggiungilo al contenitore
+                    });
+                    featuresContainer.style.display = 'block'; // Mostra il contenitore delle caratteristiche
+                }
+            });
+        });
+
+        filters.forEach(filter => {
+            filter.addEventListener('change', () => {
+                const selectedFilters = Array.from(filters)
+                    .filter(input => input.checked)
+                    .map(input => input.value);
+
+                products.forEach(product => {
+                    const productCategories = Array.from(product.classList).filter(cls => cls !== 'product');
+                    // Mostra il prodotto se nessun filtro è selezionato o se il prodotto appartiene a una categoria selezionata
+                    if (selectedFilters.length === 0 || selectedFilters.some(filter => productCategories.includes(filter))) {
+                        product.classList.remove('hidden');
+                    } else {
+                        product.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
